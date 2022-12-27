@@ -2,14 +2,15 @@ extends CanvasLayer
 
 signal start_game
 
-func show_message(text):
+func show_message(text, disappear=false):
 	$Message.text = text
 	$Message.show()
-	$MessageTimer.start()
+	if disappear:
+		$MessageTimer.start()
 
 
 func show_game_over():
-	show_message("Game Over")
+	show_message("Game Over", true)
 	yield($MessageTimer, "timeout")
 	
 	show_message("Dodge the\nCreeps!")
