@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/mob.glb-3afb43c03b9d1598b6af5154e2543eac.scn"
+path="res://.import/mob.glb-643ac4f2aacaa0beb3663bb4bae161ac.scn"
 
 [deps]
 
-source_file="res://art/mob.glb"
-dest_files=[ "res://.import/mob.glb-3afb43c03b9d1598b6af5154e2543eac.scn" ]
+source_file="res://assets/art/mob.glb"
+dest_files=[ "res://.import/mob.glb-643ac4f2aacaa0beb3663bb4bae161ac.scn" ]
 
 [params]
 
@@ -16,9 +16,11 @@ nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
+nodes/use_legacy_names=true
 materials/location=1
 materials/storage=1
 materials/keep_on_reimport=true
+meshes/octahedral_compression=true
 meshes/compress=true
 meshes/ensure_tangents=true
 meshes/storage=0
