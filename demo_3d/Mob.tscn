@@ -1,10 +1,39 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/art/mob.glb" type="PackedScene" id=1]
 [ext_resource path="res://Mob.gd" type="Script" id=2]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1.03258, 0.947492, 1.16926 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "float"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Character:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2, 0.7, 1.2 ),
+"transitions": PoolRealArray( 0.420448, 0.450625, 2.07053 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0.66, 0 ), Vector3( 0, 0.35, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Pivot/Character:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.5, 1.2 ),
+"transitions": PoolRealArray( 0.420448, 0.450625, 2.07053 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 8, 0, 0 ), Vector3( 1, 0, 0 ) ]
+}
 
 [node name="Mob" type="KinematicBody" groups=["mobs"]]
 collision_layer = 2
@@ -14,6 +43,7 @@ script = ExtResource( 2 )
 [node name="Pivot" type="Spatial" parent="."]
 
 [node name="Character" parent="Pivot" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 0.999858, -0.0168616, 0, 0.0168616, 0.999858, 0, 0.226203, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, -2.05985e-11, -0.000471239, 2.05985e-11, 1, -5.2108e-15, 0.000471239, -5.2108e-15, 1, 0, 0, -0.119886 )
@@ -22,5 +52,8 @@ shape = SubResource( 1 )
 [node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.347669, 0.275737 )
 aabb = AABB( -1.14214, -0.637134, -1.63121, 2.28427, 1.27427, 3.26242 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/float = SubResource( 2 )
 
 [connection signal="screen_exited" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier_screen_exited"]
