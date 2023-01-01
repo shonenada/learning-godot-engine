@@ -15,7 +15,7 @@ size = Vector3( 60, 2, 60 )
 [sub_resource type="CylinderMesh" id=3]
 
 [sub_resource type="SpatialMaterial" id=4]
-albedo_color = Color( 0.709804, 0.439216, 0.0745098, 1 )
+albedo_color = Color( 1, 1, 1, 0.0588235 )
 
 [sub_resource type="Curve3D" id=5]
 _data = {
@@ -61,6 +61,7 @@ size = 19.0
 
 [node name="Cylinders" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7642, 0, -13 )
+visible = false
 
 [node name="MeshInstance" type="MeshInstance" parent="Cylinders"]
 mesh = SubResource( 3 )
