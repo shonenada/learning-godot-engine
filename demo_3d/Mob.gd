@@ -16,12 +16,11 @@ func _physics_process(_delta):
 func initialize(start_position, player_position):
 	look_at_from_position(start_position, player_position, Vector3.UP)
 	rotate_y(rand_range(-PI/4, PI/4))
-	
+	$AnimationPlayer.playback_speed = 1
 	var random_speed = rand_range(min_speed, max_speed)
 	velocity = Vector3.FORWARD * random_speed
 	velocity = velocity.rotated(Vector3.UP, rotation.y)
-	
-	$AnimationPlayer.playback_speed = random_speed / min_speed
+
 
 
 func squash():

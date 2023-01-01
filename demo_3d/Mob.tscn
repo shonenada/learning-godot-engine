@@ -43,7 +43,7 @@ script = ExtResource( 2 )
 [node name="Pivot" type="Spatial" parent="."]
 
 [node name="Character" parent="Pivot" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 0.999858, -0.0168616, 0, 0.0168616, 0.999858, 0, 0.226203, 0 )
+transform = Transform( 1, 0, 0, 0, 0.999848, -0.0174524, 0, 0.0174524, 0.999848, 0, 0.35, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, -2.05985e-11, -0.000471239, 2.05985e-11, 1, -5.2108e-15, 0.000471239, -5.2108e-15, 1, 0, 0, -0.119886 )
@@ -54,6 +54,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.347669, 0.275737 )
 aabb = AABB( -1.14214, -0.637134, -1.63121, 2.28427, 1.27427, 3.26242 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "float"
 anims/float = SubResource( 2 )
 
 [connection signal="screen_exited" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier_screen_exited"]
